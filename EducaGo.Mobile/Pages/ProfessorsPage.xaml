@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.ProfessorsPage"
+             Title="Maestros registrados"
+             BackgroundColor="White">
+    <VerticalStackLayout WidthRequest="600" Padding="20" Background="White">
+        <Grid ColumnDefinitions="Auto, *, Auto" HorizontalOptions="Fill">
+            <Button Grid.Column="0"
+        TextColor="Black"
+        HorizontalOptions="Start"
+        BackgroundColor="Transparent"
+        ImageSource="user.png"
+        HeightRequest="70"
+        VerticalOptions="Start"
+        Margin="0"
+        Padding="0"
+        Clicked="OnProfilePage"
+        />
+            <Button Grid.Column="1"
+        TextColor="Black"
+        HorizontalOptions="Center"
+        BackgroundColor="Transparent"
+        ImageSource="appiconfile.png"
+        HeightRequest="10"
+        VerticalOptions="Center"
+        Margin="0"
+        Padding="0"
+        Clicked="OnFilesPage"
+        />
+            <Button Grid.Column="2"
+        TextColor="Black"
+        HorizontalOptions="End"
+        BackgroundColor="Transparent"
+        ImageSource="settings.png"
+        HeightRequest="70"
+        VerticalOptions="Start"
+        Margin="0"
+        Padding="0"
+        Clicked="OnSettingsPage"
+        />
+            
+        </Grid>
+        <Grid RowDefinitions="Auto,*,Auto">
+
+            <!-- Encabezado con logo -->
+            <StackLayout Grid.Row="0" Padding="20" Spacing="10" HorizontalOptions="Center">
+                <Image Source="logo.png" WidthRequest="80" HeightRequest="80"/>
+            </StackLayout>
+
+            <!-- Lista de profesores -->
+            <CollectionView x:Name="ProfessorsCollection"
+                        Grid.Row="1"
+                        ItemsSource="{Binding Professors}"
+                        SelectionMode="None">
+                <CollectionView.Header>
+                    <StackLayout Orientation="Horizontal" >
+                        <Button Text="←"
+                                FontSize="50"
+                                WidthRequest="50"
+                                HeightRequest="40"
+                                BackgroundColor="Transparent"
+                                TextColor="Black"
+                                Clicked="OnBackButtonClicked" />
+                        <Label Text="Maestros registrados"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           Margin="10,0,0,0"/>
+                    </StackLayout>
+                </CollectionView.Header>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10" ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center">
+                            <!-- Ícono redondo -->
+                            <Frame BackgroundColor="#F8BBD0"
+                               Padding="10"
+                               CornerRadius="30"
+                               HeightRequest="40"
+                               WidthRequest="40"
+                               VerticalOptions="Center">
+                                <Image Source="user_icon_dark.png"
+                                   WidthRequest="20"
+                                   HeightRequest="20"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"/>
+                            </Frame>
+
+                            <!-- Datos del profesor -->
+                            <StackLayout Grid.Column="1" Padding="10,0">
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Degree}" FontSize="12"/>
+                            </StackLayout>
+
+                            <!-- Verificado -->
+                            <Image Source="check_icon.png"
+                               Grid.Column="2"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               VerticalOptions="Center"
+                               HorizontalOptions="End"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Barra de navegación inferior -->
+            <Grid Grid.Row="2"
+              BackgroundColor="White"
+              Padding="20,10"
+              ColumnDefinitions="*,*,*,*">
+                <Image Source="home_icon.png" Grid.Column="0" HeightRequest="24" HorizontalOptions="Center"/>
+                <Image Source="school_icon.png" Grid.Column="1" HeightRequest="24" HorizontalOptions="Center"/>
+                <Image Source="docs_icon.png" Grid.Column="2" HeightRequest="24" HorizontalOptions="Center"/>
+                <Image Source="user_icon.png" Grid.Column="3" HeightRequest="24" HorizontalOptions="Center"/>
+            </Grid>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

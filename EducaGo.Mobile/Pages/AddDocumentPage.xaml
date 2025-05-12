@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.AddDocumentPage"
+             Title="Añadir documento"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+
+        <!-- Formulario -->
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="20" Spacing="20">
+
+                <Label Text="Título del documento" FontAttributes="Bold"/>
+                <Entry x:Name="TitleEntry" Placeholder="Value" BackgroundColor="#F0F0F0"/>
+
+                <Label Text="Autor del documento" FontAttributes="Bold"/>
+                <Entry x:Name="AuthorEntry" Placeholder="Value" BackgroundColor="#F0F0F0"/>
+
+                <Label Text="Añada el documento" FontAttributes="Bold"/>
+                <Image Source="upload_icon.png"
+                       WidthRequest="50"
+                       HeightRequest="50"
+                       HorizontalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Botones inferiores + navegación -->
+        <Grid Grid.Row="2"
+              Padding="20,10"
+              RowSpacing="10"
+              ColumnDefinitions="*,*"
+              VerticalOptions="End">
+
+            <Button Text="Cancelar"
+                    Grid.Column="0"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Clicked="OnBackButtonClicked"/>
+
+            <Button Text="Aceptar"
+                    Grid.Column="1"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Clicked="OnAcceptClicked"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>

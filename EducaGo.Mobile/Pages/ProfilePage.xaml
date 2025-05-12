@@ -7,14 +7,14 @@
 
         <!-- Título -->
         <HorizontalStackLayout>
-            <Button Text="←"
-        FontSize="40"
-        TextColor="White"
-        BackgroundColor="Transparent"
-        WidthRequest="40"
-        HeightRequest="40"
-        Clicked="OnBackButtonClicked" />
-        <Label Text="Mi perfil" FontSize="Large" FontAttributes="Bold" />
+            <Button Text="Volver a Inicio"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                CornerRadius="8"
+                Padding="10"
+                Margin="20,10,20,0"
+                Clicked="OnBackButtonClicked"/>
+            <Label Text="Mi perfil" FontSize="Large" FontAttributes="Bold" />
         </HorizontalStackLayout>
 
     <!-- Sección del usuario -->

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.FilesPage"
+             Title="Files"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Encabezado -->
+        
+        <StackLayout Orientation="Horizontal"
+                     Padding="20,10"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="StartAndExpand"
+                     Grid.Row="0">
+            <Button Text="Volver a Inicio"
+                BackgroundColor="#2196F3"
+                TextColor="White"
+                CornerRadius="8"
+                Padding="10"
+                Margin="20,10,20,0"
+                Clicked="OnBackButtonClicked"/>
+            <Label Text="Documentos"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="StartAndExpand"/>
+            <Button Text="+"
+                    FontSize="24"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    Clicked="OnAddDocumentPage"/>
+        </StackLayout>
+
+        <!-- Lista de documentos -->
+        <CollectionView Grid.Row="1"
+                        x:Name="FilesCollection"
+                        ItemsSource="{Binding Files}">
+            <CollectionView.ItemTemplate>
+                
+                <DataTemplate>
+                    
+                    <Frame BackgroundColor="#eeeeee"
+                           CornerRadius="5"
+                           Margin="10"
+                           Padding="10">
+
+                        <StackLayout>
+                            <Button Clicked="OnFileDetailPage"/>
+                            <Label Text="{Binding Author}" 
+                                   FontSize="12" 
+                                   TextColor="Gray"/>
+                            <Label Text="{Binding Title}" 
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Time}" 
+                                   FontSize="10" 
+                                   HorizontalOptions="End"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Barra de navegación inferior -->
+        <Grid Grid.Row="2"
+              BackgroundColor="White"
+              Padding="20,10"
+              ColumnDefinitions="*,*,*,*">
+            <Image Source="home_icon.png" Grid.Column="0" HeightRequest="24" HorizontalOptions="Center"/>
+            <Image Source="school_icon.png" Grid.Column="1" HeightRequest="24" HorizontalOptions="Center"/>
+            <Image Source="docs_icon.png" Grid.Column="2" HeightRequest="24" HorizontalOptions="Center"/>
+            <Image Source="user_icon.png" Grid.Column="3" HeightRequest="24" HorizontalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

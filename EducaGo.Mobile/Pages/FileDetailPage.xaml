@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.FileDetailPage"
+             Title="{Binding Title}"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20">
+            <Button Text="Volver a Inicio"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Padding="10"
+                    Margin="20,10,20,0"
+                    Clicked="OnBackButtonClicked"/> 
+
+            <!-- Info -->
+            <StackLayout BackgroundColor="#eeeeee" Padding="15" Spacing="5">
+                <Label Text="{Binding Author}" FontSize="12" TextColor="Gray"/>
+                <Label Text="{Binding Title}" FontAttributes="Bold"/>
+                <Label Text="{Binding Time}" FontSize="10" HorizontalOptions="End"/>
+            </StackLayout>
+
+            <!-- Imagen -->
+            <Frame Padding="0" BackgroundColor="#eeeeee">
+                <Image Source="{Binding Image}" Aspect="AspectFit" HeightRequest="200"/>
+            </Frame>
+
+            <!-- Descripción -->
+            <Frame Padding="10" BackgroundColor="#eeeeee">
+                <StackLayout>
+                    <Label Text="🌿 Plantas" FontAttributes="Bold"/>
+                    <Label Text="{Binding Description}" FontSize="12"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Botón -->
+            <Button Text="Siguiente documento"
+                    BackgroundColor="#f5f5f5"
+                    TextColor="Black"
+                    Clicked="OnNextDocumentClicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

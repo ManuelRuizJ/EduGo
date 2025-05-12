@@ -84,13 +84,13 @@
                     <Button Grid.Column="1"
                         TextColor="Black"
                         HorizontalOptions="Center"
-                        VerticalOptions="Start"
                         BackgroundColor="Transparent"
-                        ImageSource="logo.png"
-                        WidthRequest="150"
-                        HeightRequest="150"
-                        Margin="5"
-                        
+                        ImageSource="appiconfile.png"
+                        HeightRequest="10"
+                        VerticalOptions="Center"
+                        Margin="0"
+                        Padding="0"
+                        Clicked="OnFilesPage"
                         />
                     <Button Grid.Column="2"
                         TextColor="Black"
@@ -101,8 +101,20 @@
                         VerticalOptions="Start"
                         Margin="0"
                         Padding="0"
+                        Clicked="OnSettingsPage"
                         />
                 </Grid>
+                <Button Grid.Column="1"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start"
+                    BackgroundColor="Transparent"
+                    ImageSource="logo.png"
+                    WidthRequest="150"
+                    HeightRequest="150"
+                    Margin="5"
+    
+                    />
 
                 <Label Text="Avisos" FontSize="18" FontAttributes="Bold" TextColor="Black" />
                 <HorizontalStackLayout Spacing="25">
@@ -212,6 +224,7 @@
 
             <VerticalStackLayout Spacing="10">
                 <HorizontalStackLayout Spacing="5" VerticalOptions="Center" Padding="0,20,0,15">
+                    
                     <Label Text="Mis materias" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
                     <Button Text="→"
                         FontSize="35"
@@ -270,8 +283,19 @@
             </VerticalStackLayout>
 
             <VerticalStackLayout Spacing="10" >
-                <Label Text="Maestros registrados" FontSize="18" FontAttributes="Bold" TextColor="Black" Padding="0,20,0,0"/>
+                <HorizontalStackLayout Spacing="5" VerticalOptions="Center" Padding="0,20,0,15">
 
+                    <Label Text="Maestros Registrados" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+                    <Button Text="→"
+                            FontSize="35"
+                            WidthRequest="20"
+                            HeightRequest="0"
+                            Padding="0,0,0,20"
+                            TextColor="Black"
+                            VerticalOptions="Center"
+                            BackgroundColor="Transparent"
+                            Clicked="OnProfessorsPage" />
+                </HorizontalStackLayout>
                 <HorizontalStackLayout Padding="1" Spacing="2">
                     <Frame Background="Transparent" BorderColor="Transparent" WidthRequest="100">
                         <VerticalStackLayout>

@@ -5,15 +5,15 @@
              Title="CoursesPage">
 
     <StackLayout WidthRequest="800" Padding="1">
-        <HorizontalStackLayout Padding="20">
+        <HorizontalStackLayout>
             <Button Text="←"
-        FontSize="40"
-        TextColor="White"
-        BackgroundColor="Transparent"
-        WidthRequest="40"
-        HeightRequest="40"
-        Clicked="OnBackButtonClicked" />
-        <Label Text="Cursos" FontSize="Large" FontAttributes="Bold" />
+                    FontSize="50"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    WidthRequest="50"
+                    HeightRequest="50"
+                    Clicked="OnBackButtonClicked" />    
+            <Label Text="Cursos" FontSize="Large" FontAttributes="Bold" />
 
         </HorizontalStackLayout>
 

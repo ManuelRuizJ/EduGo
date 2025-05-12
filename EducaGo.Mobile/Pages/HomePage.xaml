@@ -6,14 +6,15 @@
     <StackLayout WidthRequest="700" Padding="20">
         <HorizontalStackLayout>
             <Button Text="←"
-    FontSize="40"
-    TextColor="White"
-    BackgroundColor="Transparent"
-    WidthRequest="40"
-    HeightRequest="40"
-    Clicked="OnBackButtonClicked" />
+                    FontSize="50"
+                    WidthRequest="50"
+                    HeightRequest="40"
+                    BackgroundColor="Transparent"
+                    TextColor="Black"
+                    Clicked="OnBackButtonClicked" />
             <Label Text="Mis materias" FontSize="Large" FontAttributes="Bold" />
         </HorizontalStackLayout>
+        
     
 
         <!-- Curso 1 -->

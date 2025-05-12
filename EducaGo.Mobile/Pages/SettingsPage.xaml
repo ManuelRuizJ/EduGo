@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.SettingsPage"
+             BackgroundColor="White"
+             Title="Perfil">
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Encabezado -->
+        
+        <StackLayout Padding="20" Spacing="10">
+            <Label Text="Ajustes" FontSize="24" FontAttributes="Bold"/>
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Button Text="Volver a Inicio"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                    CornerRadius="8"
+                    Padding="10"
+                    Margin="20,10,20,0"
+                    Clicked="OnBackButtonClicked"/>    
+
+                <Image Source="profile_placeholder.png"
+                       WidthRequest="60"
+                       HeightRequest="60"
+                       Aspect="AspectFill"
+                       VerticalOptions="Center"
+                       BackgroundColor="#ccc"
+                       Clip="EllipseGeometry Center=30,30 RadiusX=30 RadiusY=30"/>
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="Usuario" FontAttributes="Bold"/>
+                    <Label Text="correo@electrónico" FontSize="12" TextColor="Gray"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- Lista de opciones -->
+        <StackLayout Grid.Row="1" Spacing="1" Padding="10,20">
+            <Frame Padding="10" BackgroundColor="#eeeeee" HasShadow="False">
+                <Label Text="Cambiar contraseña"/>
+            </Frame>
+            <Frame Padding="10" BackgroundColor="#eeeeee" HasShadow="False">
+                <Label Text="Cambiar idioma"/>
+            </Frame>
+            <Frame Padding="10" BackgroundColor="#eeeeee" HasShadow="False">
+                <Label Text="Modo oscuro/claro"/>
+            </Frame>
+            <Frame Padding="10" BackgroundColor="#eeeeee" HasShadow="False">
+                <Label Text="Notificaciones activadas/desactivadas"/>
+            </Frame>
+            <Frame Padding="10" BackgroundColor="#eeeeee" HasShadow="False">
+                <Label Text="Versión actual"/>
+            </Frame>
+            <Frame Padding="10" BackgroundColor="#eeeeee" HasShadow="False">
+                <Label Text="Términos y condiciones"/>
+            </Frame>
+        </StackLayout>
+
+        <!-- Barra de navegación inferior -->
+        <Grid Grid.Row="2"
+              BackgroundColor="White"
+              Padding="20,10"
+              ColumnDefinitions="*,*,*,*">
+            <Image Source="home_icon.png" Grid.Column="0" HeightRequest="24" HorizontalOptions="Center"/>
+            <Image Source="search_icon.png" Grid.Column="1" HeightRequest="24" HorizontalOptions="Center"/>
+            <Image Source="docs_icon.png" Grid.Column="2" HeightRequest="24" HorizontalOptions="Center"/>
+            <Image Source="user_icon.png" Grid.Column="3" HeightRequest="24" HorizontalOptions="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

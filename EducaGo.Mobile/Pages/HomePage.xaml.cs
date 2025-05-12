@@ -6,7 +6,6 @@ public partial class HomePage : ContentPage
 	{
 		InitializeComponent();
 	}
-
     private async void Course1Clicked(object sender, EventArgs e)
     {
         await Navigation.PushModalAsync(new Pages.CoursesPage());

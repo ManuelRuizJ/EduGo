@@ -15,11 +15,11 @@
                 <Frame BackgroundColor="#B2EBF2" CornerRadius="10" Padding="10">
                     <HorizontalStackLayout VerticalOptions="Center" Spacing="10">
                         <Button Text="←" 
-                            FontSize="20"
-                            WidthRequest="40"
-                            HeightRequest="40"
-                            TextColor="White"
+                            FontSize="40"
+                            WidthRequest="50"
+                            HeightRequest="50"
                             BackgroundColor="Transparent"
+                                TextColor="Black"
                 Clicked="OnBackButtonClicked" />
                         <Label Text="Curso 1-Lección 1" FontSize="24" FontAttributes="Bold" VerticalOptions="Center" />
                     </HorizontalStackLayout>
