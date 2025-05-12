@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.CoursesPage"
+             Title="CoursesPage">
+
+    <StackLayout WidthRequest="800" Padding="1">
+        <HorizontalStackLayout Padding="20">
+            <Button Text="←"
+        FontSize="40"
+        TextColor="White"
+        BackgroundColor="Transparent"
+        WidthRequest="40"
+        HeightRequest="40"
+        Clicked="OnBackButtonClicked" />
+        <Label Text="Cursos" FontSize="Large" FontAttributes="Bold" />
+
+        </HorizontalStackLayout>
+
+            <Grid ColumnDefinitions="*, Auto"
+      VerticalOptions="Center"
+      Margin="0,0,0,10">
+
+            <Label Text="Curso 1"
+           FontSize="Large"
+           FontAttributes="Bold"
+           TextColor="White"
+           VerticalOptions="Center"
+           Grid.Column="0" />
+
+            <Button Text="＋"
+            FontSize="24"
+            WidthRequest="50"
+            HeightRequest="50"
+            TextColor="White"
+            BackgroundColor="Transparent"
+            Clicked="OnAddButtonClicked"
+            VerticalOptions="Center"
+            Grid.Column="1" />
+        </Grid>
+
+        <Button Text="Lección 1"
+                BackgroundColor="#42A5F5"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="5"
+                Clicked="LessonClicked"/>
+        <Button Text="Lección 2"
+                BackgroundColor="#42A5F5"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="5"/>
+        <Button Text="Lección 3"
+                BackgroundColor="#42A5F5"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="5"/>
+
+        <Label Text="Curso 2" FontSize="Large" FontAttributes="Bold" Margin="0,20,0,0"/>
+
+        <Button Text="Lección 4"
+                BackgroundColor="#FFA726"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="5"/>
+        <Button Text="Lección 5"
+                BackgroundColor="#FFA726"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="5"/>
+        <Button Text="Lección 6"
+                BackgroundColor="#FFA726"
+                TextColor="White"
+                CornerRadius="10"
+                Margin="5"/>
+    </StackLayout>
+
+</ContentPage>

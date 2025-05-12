@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.AddLessonPage"
+             Title="AddLessonPage">
+    <ScrollView>
+
+        <VerticalStackLayout WidthRequest="900" Padding="40" Spacing="15">
+        <HorizontalStackLayout Grid.Row="0" Padding="15" BackgroundColor="{StaticResource Primary}">
+            <Button Text="←"
+                    FontSize="20"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    Clicked="OnBackButtonClicked" />
+            <Label Text="Añadir lección"
+                   FontSize="20"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <BoxView WidthRequest="40" IsVisible="False" />
+        </HorizontalStackLayout>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout Spacing="20">
+                <Label Text="Título" FontSize="18" FontAttributes="Bold" />
+                <Entry Placeholder="Escriba aquí el título de la lección" />
+
+                <Frame BackgroundColor="{StaticResource Gray200}"
+                       Padding="20"
+                       CornerRadius="10"
+                       HorizontalOptions="Fill">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Image Source="videocam.png"
+                               WidthRequest="60"
+                               HeightRequest="60"
+                               Aspect="AspectFit" />
+                        <Label Text="Añadir video/multimedia"
+                               HorizontalOptions="Center"
+                               TextColor="{StaticResource Gray500}" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Label Text="Descripción" FontSize="16" FontAttributes="Bold" />
+                <Editor Placeholder="Escriba aquí su descripción"
+                        AutoSize="TextChanges"
+                        HeightRequest="100" />
+
+                <Label Text="Información" FontSize="16" FontAttributes="Bold" />
+                <Editor Placeholder="Escriba aquí la información"
+                        AutoSize="TextChanges"
+                        HeightRequest="200" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <HorizontalStackLayout Grid.Row="2" Padding="15" Spacing="10"  HorizontalOptions="Center">
+            <Button Text="Cancelar"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource Gray500}"
+                    HorizontalOptions="Fill"
+                    CornerRadius="10"
+                    Clicked="OnCancelButtonClicked" />
+            <Button Text="Aceptar"
+                    TextColor="White"
+                    BackgroundColor="{StaticResource Primary}"
+                    HorizontalOptions="Fill"
+                    CornerRadius="10"
+                    Clicked="OnAcceptButtonClicked" />
+        </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.AddExamPage"
+             Title="AddExamPage">
+    <ScrollView>
+        <VerticalStackLayout WidthRequest="900" Padding="40" Spacing="15">
+
+        <HorizontalStackLayout Grid.Row="0" Padding="15" BackgroundColor="{StaticResource Primary}">
+            <Button Text="←"
+                    FontSize="20"
+                    TextColor="White"
+                    BackgroundColor="Transparent"
+                    WidthRequest="40"
+                    HeightRequest="40"
+                    Clicked="OnBackButtonClicked" />
+            <Label Text="Añadir examen"
+                   FontSize="20"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center" />
+            <BoxView WidthRequest="40" IsVisible="False" />
+        </HorizontalStackLayout>
+
+        <ScrollView Grid.Row="1" Padding="20">
+            <VerticalStackLayout x:Name="preguntaContainer" Spacing="20">
+                <VerticalStackLayout Padding="10">
+                    <Entry Placeholder="escriba aquí su Título" FontSize="18" FontAttributes="Bold" />
+                    <Entry Placeholder="Escriba aquí su pregunta" />
+
+                    <Label Text="Opciones de respuesta" FontSize="16" FontAttributes="Bold" />
+                    <VerticalStackLayout Spacing="10">
+                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                            <Entry Placeholder="Escriba la opción 1" HorizontalOptions="Fill" />
+                            <RadioButton x:Name="radio1" Content="Seleccione la respuesta correcta" VerticalOptions="Center" CheckedChanged="OnRadioButtonCheckedChanged" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                            <Entry Placeholder="Escriba la opción 2" HorizontalOptions="Fill" />
+                            <RadioButton x:Name="radio2" Content="Seleccione la respuesta correcta" VerticalOptions="Center" CheckedChanged="OnRadioButtonCheckedChanged" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                            <Entry Placeholder="Escriba la opción 3" HorizontalOptions="Fill" />
+                            <RadioButton x:Name="radio3" Content="Seleccione la respuesta correcta" VerticalOptions="Center" CheckedChanged="OnRadioButtonCheckedChanged" />
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                            <Entry Placeholder="Escriba la opción 4" HorizontalOptions="Fill" />
+                            <RadioButton x:Name="radio4" Content="Seleccione la respuesta correcta" VerticalOptions="Center" CheckedChanged="OnRadioButtonCheckedChanged" />
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+
+                
+            </VerticalStackLayout>
+        </ScrollView>
+
+            <Button Text="Añadir otra pregunta"
+            BackgroundColor="{StaticResource Accent}"
+            TextColor="White"
+            CornerRadius="10"
+            Margin="0,20,0,0"
+            VerticalOptions="End"
+            Clicked="OnAddAnotherQuestionClicked" />        
+
+            <HorizontalStackLayout Grid.Row="2"
+                         Padding="15"
+                         Spacing="10"
+                         HorizontalOptions="Center">
+            <Button Text="Cancelar"
+            TextColor="White"
+            BackgroundColor="{StaticResource Gray500}"
+            CornerRadius="10" 
+            Clicked="OnCancelAdd"/>
+            <Button Text="Aceptar"
+            TextColor="White"
+            BackgroundColor="{StaticResource Primary}"
+            CornerRadius="10" 
+            Clicked="OnAceptAdd"/>
+        </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

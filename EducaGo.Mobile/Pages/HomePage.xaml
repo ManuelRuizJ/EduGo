@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.HomePage"
+             Title="HomePage">
+    <StackLayout WidthRequest="700" Padding="20">
+        <HorizontalStackLayout>
+            <Button Text="←"
+    FontSize="40"
+    TextColor="White"
+    BackgroundColor="Transparent"
+    WidthRequest="40"
+    HeightRequest="40"
+    Clicked="OnBackButtonClicked" />
+            <Label Text="Mis materias" FontSize="Large" FontAttributes="Bold" />
+        </HorizontalStackLayout>
+    
+
+        <!-- Curso 1 -->
+        <Frame BackgroundColor="#42A5F5" CornerRadius="10" Padding="10" Margin="5">
+            <StackLayout>
+                <Button Text="Curso 1" FontSize="Medium" TextColor="White" FontAttributes="Bold" BackgroundColor="Transparent" Clicked="Course1Clicked"/>
+                <Label Text="75% por completar" FontSize="Small" TextColor="White"/>
+                <ProgressBar Progress="0.75" BackgroundColor="White" HeightRequest="5"/>
+            </StackLayout>
+        </Frame>
+
+        <!-- Curso 2 -->
+        <Frame BackgroundColor="#FFA726" CornerRadius="10" Padding="10" Margin="5">
+            <StackLayout>
+                <Button Text="Curso 2" FontSize="Medium" TextColor="Black" FontAttributes="Bold" BackgroundColor="Transparent" Command="{Binding Course2Command}"/>
+                <Label Text="75% por completar" FontSize="Small" TextColor="Black"/>
+                <ProgressBar Progress="0.75" BackgroundColor="White" HeightRequest="5"/>
+            </StackLayout>
+        </Frame>
+
+        <!-- Curso 3 -->
+        <Frame BackgroundColor="#EF9A9A" CornerRadius="10" Padding="10" Margin="5">
+            <StackLayout>
+                <Button Text="Curso 3" FontSize="Medium" TextColor="Black" FontAttributes="Bold" BackgroundColor="Transparent" Command="{Binding Course3Command}"/>
+                <Label Text="75% por completar" FontSize="Small" TextColor="Black"/>
+                <ProgressBar Progress="0.75" BackgroundColor="White" HeightRequest="5"/>
+            </StackLayout>
+        </Frame>
+
+        <!-- Curso 4 -->
+        <Frame BackgroundColor="#90CAF9" CornerRadius="10" Padding="10" Margin="5">
+            <StackLayout>
+                <Button Text="Curso 4" FontSize="Medium" TextColor="Black" FontAttributes="Bold" BackgroundColor="Transparent" Command="{Binding Course4Command}"/>
+                <Label Text="75% por completar" FontSize="Small" TextColor="Black"/>
+                <ProgressBar Progress="0.75" BackgroundColor="White" HeightRequest="5"/>
+            </StackLayout>
+        </Frame>
+
+    </StackLayout>
+</ContentPage>

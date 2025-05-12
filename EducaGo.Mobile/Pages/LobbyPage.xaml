@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducaGo.Mobile.Pages.LobbyPage"
+             Title="LobbyPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="AvisoFrameStyle" TargetType="Frame">
+                <Setter Property="WidthRequest" Value="80" />
+                <Setter Property="HeightRequest" Value="80" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="BorderColor" Value="#E0E0E0" />
+                <Setter Property="Padding" Value="10" />
+            </Style>
+           
+
+            <Style x:Key="LeccionFrameStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#F5F5F5" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="15" />
+                <Setter Property="Margin" Value="0,5" />
+            </Style>
+            <Style x:Key="ProgresoFrameStyle" TargetType="Frame">
+                <Setter Property="WidthRequest" Value="90" />
+                <Setter Property="HeightRequest" Value="90" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+            </Style>
+
+            <Style x:Key="MateriaFrameStyle" TargetType="Frame">
+                <Setter Property="WidthRequest" Value="90" />
+                <Setter Property="HeightRequest" Value="90" />
+                <Setter Property="CornerRadius" Value="45" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="BackgroundColor" Value="#FFA726" />
+            </Style>
+
+            <Style x:Key="ExplorarFrameStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="#EEEEEE" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Padding" Value="20" />
+                <Setter Property="Margin" Value="0,10" />
+            </Style>
+
+            <Style x:Key="MaestroFrameStyle" TargetType="Frame">
+                <Setter Property="WidthRequest" Value="70" />
+                <Setter Property="HeightRequest" Value="70" />
+                <Setter Property="CornerRadius" Value="35" />
+                <Setter Property="IsClippedToBounds" Value="True" />
+                <Setter Property="BorderColor" Value="#E0E0E0" />
+                <Setter Property="Padding" Value="0" />
+            </Style>
+
+            <Color x:Key="Primary">#3F51B5</Color>
+            <Color x:Key="Accent">#FFA726</Color>
+            <Color x:Key="Gray100">#F5F5F5</Color>
+            <Color x:Key="Gray200">#EEEEEE</Color>
+            <Color x:Key="Gray300">#E0E0E0</Color>
+            <Color x:Key="Gray500">#9E9E9E</Color>
+            <Color x:Key="TextColorPrimary">#212121</Color>
+            <Color x:Key="TextColorSecondary">#757575</Color>
+            <Color x:Key="AvisoColor1">#FFC107</Color>
+            <Color x:Key="AvisoColor2">#4CAF50</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout WidthRequest="600" Padding="20" Background="White">
+
+            <VerticalStackLayout Spacing="10">
+                <Grid ColumnDefinitions="Auto, *, Auto" HorizontalOptions="Fill">
+                    <Button Grid.Column="0"
+                        TextColor="Black"
+                        HorizontalOptions="Start"
+                        BackgroundColor="Transparent"
+                        ImageSource="user.png"
+                        HeightRequest="70"
+                        VerticalOptions="Start"
+                        Margin="0"
+                        Padding="0"
+                        Clicked="OnProfilePage"
+                        />
+                    <Button Grid.Column="1"
+                        TextColor="Black"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Start"
+                        BackgroundColor="Transparent"
+                        ImageSource="logo.png"
+                        WidthRequest="150"
+                        HeightRequest="150"
+                        Margin="5"
+                        
+                        />
+                    <Button Grid.Column="2"
+                        TextColor="Black"
+                        HorizontalOptions="End"
+                        BackgroundColor="Transparent"
+                        ImageSource="settings.png"
+                        HeightRequest="70"
+                        VerticalOptions="Start"
+                        Margin="0"
+                        Padding="0"
+                        />
+                </Grid>
+
+                <Label Text="Avisos" FontSize="18" FontAttributes="Bold" TextColor="Black" />
+                <HorizontalStackLayout Spacing="25">
+                    <Frame BackgroundColor="Transparent" Padding="0" BorderColor="Transparent">
+                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Frame WidthRequest="90"
+                               HeightRequest="90"
+                               CornerRadius="45"
+                               BackgroundColor="#FFA726"
+                               BorderColor="Transparent"
+                               Padding="0"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                            <Label Text="!"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="24"
+                               TextColor="White" /> 
+                            </Frame>
+                            <Label Text="Tienes una prueba pendiente"
+                               FontSize="12"
+                               HorizontalOptions="Center"
+                               TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Frame BackgroundColor="Transparent" Padding="0" BorderColor="Transparent">
+                        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="5">
+                            <Frame WidthRequest="90"
+                               HeightRequest="90"
+                               CornerRadius="45"
+                               BackgroundColor="#FFA726"
+                               BorderColor="Transparent"
+                               Padding="0"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center">
+                            <Label Text="!"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               FontSize="24"
+                               TextColor="White" />
+                            </Frame>
+                            <Label Text="Tema nuevo disponible"
+                               FontSize="12"
+                               HorizontalOptions="Center"
+                               TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10" >
+                <HorizontalStackLayout Spacing="5" VerticalOptions="Center">
+                    <Label Text="Últimas lecciones" FontSize="18" FontAttributes="Bold" TextColor="Black" Padding="0,20,0,0"/>
+                    <Image Source="arrow_right.png" WidthRequest="20" HeightRequest="20" />
+                </HorizontalStackLayout>
+                <Frame Style="{StaticResource LeccionFrameStyle}" BorderColor="Transparent">
+                    <Grid ColumnDefinitions="Auto, *, Auto" RowDefinitions="Auto, Auto, Auto, Auto">
+                        <Frame Grid.RowSpan="4" Style="{StaticResource ProgresoFrameStyle}" BackgroundColor="LightSkyBlue" BorderColor="Transparent">
+                            <Label Text="50%" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Frame>
+                        <Label Grid.Column="1" Grid.Row="0" Text="Matematicas" FontSize="16" FontAttributes="Bold" TextColor="Black" Padding="10,0,0,0"/>
+                        <Label Grid.Column="1" Grid.Row="1" Text="Description duis aute irure dolor in reprehenderit in voluptate velit." FontSize="10" TextColor="{StaticResource TextColorSecondary}" Padding="10,0,0,0" />
+                        <HorizontalStackLayout Grid.Column="1" Grid.Row="2" Spacing="5" VerticalOptions="Center">
+                            <Image Source="clock.png" WidthRequest="10" HeightRequest="10" />
+                            <Label Text="Today • 23 min" FontSize="8" TextColor="{StaticResource TextColorSecondary}" />
+                        </HorizontalStackLayout>
+                        <Button Grid.Column="2" Grid.RowSpan="4"
+                            Text="Continuar"
+                            FontSize="10"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource Primary}"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            WidthRequest="80"
+                            HeightRequest="20"
+                            Margin="0,0,0,0"
+                            Clicked="ContinuarButton_Clicked" />
+                    </Grid>
+                </Frame>
+                <Frame Style="{StaticResource LeccionFrameStyle}" BorderColor="Transparent">
+                    <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto, Auto, Auto">
+                        <Frame Grid.RowSpan="3" Style="{StaticResource ProgresoFrameStyle}" BackgroundColor="OrangeRed" BorderColor="Transparent">
+                            <Label Text="80%" FontSize="16" HorizontalOptions="Center" VerticalOptions="Center" />
+                        </Frame>
+                        <Label Grid.Column="1" Text="Historia" FontSize="16" FontAttributes="Bold" TextColor="Black" Padding="10,0,0,0"/>
+                        <Label Grid.Column="1" Grid.Row="1" Text="Description duis aute irure dolor in reprehenderit in voluptate velit." FontSize="10" TextColor="{StaticResource TextColorSecondary}" Padding="10,0,0,0"/>
+                        <HorizontalStackLayout Grid.Column="1" Grid.Row="2" Spacing="5" VerticalOptions="Center">
+                            <Image Source="clock.png" WidthRequest="10" HeightRequest="10" />
+                            <Label Text="Today • 23 min" FontSize="8" TextColor="{StaticResource TextColorSecondary}" />
+                        </HorizontalStackLayout>
+                        <Button Grid.Column="2" Grid.RowSpan="4"
+                            Text="Continuar"
+                            FontSize="10"
+                            TextColor="White"
+                            BackgroundColor="{StaticResource Primary}"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            WidthRequest="80"
+                            HeightRequest="20"
+                            Margin="0,0,0,0"
+                            Clicked="ContinuarButton_Clicked" />
+                        <Image Grid.Column="1" Grid.RowSpan="3" HorizontalOptions="End" VerticalOptions="Center" Source="play_button.png" WidthRequest="20" HeightRequest="20" />
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout Spacing="5" VerticalOptions="Center" Padding="0,20,0,15">
+                    <Label Text="Mis materias" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+                    <Button Text="→"
+                        FontSize="35"
+                        WidthRequest="20"
+                        HeightRequest="0"
+                        Padding="0,0,0,20"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        BackgroundColor="Transparent"
+                        Clicked="OnSubjectsClicked" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="10">
+                    <Button Style="{StaticResource MateriaButtonStyle}"
+                        Clicked="OnSubjectsClicked"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        CornerRadius="45"
+                        Text="Ciencias"
+                        FontSize="14"
+                        TextColor="White" />
+                    <Button Style="{StaticResource MateriaButtonStyle}"
+                        Clicked="OnSubjectsClicked"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        CornerRadius="45"
+                        Text="Historia"
+                        FontSize="14"
+                        TextColor="White" />
+                    <Button Style="{StaticResource MateriaButtonStyle}"
+                        Clicked="OnSubjectsClicked"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        CornerRadius="45"
+                        Text="Arte"
+                        FontSize="14"
+                        TextColor="White" />
+                    <Button Style="{StaticResource MateriaButtonStyle}"
+                        Clicked="OnSubjectsClicked"
+                        WidthRequest="90"
+                        HeightRequest="90"
+                        CornerRadius="45"
+                        Text="Lectura"
+                        FontSize="14"
+                        TextColor="White" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout Spacing="5" VerticalOptions="Center" Padding="0,10,0,10">
+                    <Label Text="Explora los cursos disponibles" FontSize="18" FontAttributes="Bold" TextColor="Black"/>
+                    <Image Source="arrow_right.png" WidthRequest="20" HeightRequest="20" />
+                </HorizontalStackLayout>
+                <Frame Background="LightGray" HeightRequest="200">
+                    <Image Source="searc.png" WidthRequest="100" HeightRequest="100" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10" >
+                <Label Text="Maestros registrados" FontSize="18" FontAttributes="Bold" TextColor="Black" Padding="0,20,0,0"/>
+
+                <HorizontalStackLayout Padding="1" Spacing="2">
+                    <Frame Background="Transparent" BorderColor="Transparent" WidthRequest="100">
+                        <VerticalStackLayout>
+                            <Frame BackgroundColor="Transparent" WidthRequest="90" HeightRequest="90" CornerRadius="45">
+                                <Image Source="user.png" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Juan" FontSize="12" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,5" FontAttributes="Bold" TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame Background="Transparent" BorderColor="Transparent" WidthRequest="100">
+                        <VerticalStackLayout>
+                            <Frame BackgroundColor="Transparent" WidthRequest="90" HeightRequest="90" CornerRadius="45">
+                                <Image Source="user.png" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Juan" FontSize="12" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,5" FontAttributes="Bold" TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame Background="Transparent" BorderColor="Transparent" WidthRequest="100">
+                        <VerticalStackLayout>
+                            <Frame BackgroundColor="Transparent" WidthRequest="90" HeightRequest="90" CornerRadius="45">
+                                <Image Source="user.png" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Juan" FontSize="12" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,5" FontAttributes="Bold" TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame Background="Transparent" BorderColor="Transparent" WidthRequest="100">
+                        <VerticalStackLayout>
+                            <Frame BackgroundColor="Transparent" WidthRequest="90" HeightRequest="90" CornerRadius="45">
+                                <Image Source="user.png" VerticalOptions="Center" />
+                            </Frame>
+                            <Label Text="Juan" FontSize="12" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,5" FontAttributes="Bold" TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame Background="Transparent" BorderColor="Transparent" WidthRequest="100">
+                        <VerticalStackLayout>
+                            <Frame BackgroundColor="Transparent" WidthRequest="90" HeightRequest="90" CornerRadius="45">
+                                <Image Source="user.png" VerticalOptions="Center" />
+                            </Frame>
+                            <Label Text="Juan" FontSize="12" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,5" FontAttributes="Bold" TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+                    <Frame Background="Transparent" BorderColor="Transparent" WidthRequest="100">
+                        <VerticalStackLayout>
+                            <Frame BackgroundColor="Transparent" WidthRequest="90" HeightRequest="90" CornerRadius="45">
+                                <Image Source="user.png" VerticalOptions="Center"  />
+                            </Frame>
+                            <Label Text="Juan" FontSize="12" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,5" FontAttributes="Bold" TextColor="Black" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
